@@ -1,3 +1,5 @@
+local utf8 = require('utf8')
+
 function love.load()
     label = "Today's Calories:"
     text = '2000'
