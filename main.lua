@@ -37,7 +37,7 @@ function love.draw()
     love.graphics.draw(sun)--sun rotates
     love.graphics.draw(cloud1, cloud1x, 130) --cloud1
     love.graphics.draw(cloud2, cloud2x, 250) --cloud1
-    cloud1x = cloud1x + .25 --cloud1 speed
+    cloud1x = cloud1x + .3 --cloud1 speed
     cloud2x = cloud2x + .5 --cloud2 speed
     if (cloud1x > 800) then --resets clouds to the beginning
         cloud1x = -260 
