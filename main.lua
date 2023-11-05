@@ -5,8 +5,8 @@ function love.load()
     text = '2000'
     love.window.setMode(1152, 768) --window dimensions
     background = love.graphics.newImage('graphics/background.png') --background
-    cloud1 = love.graphics.newImage('graphics/cloud2.png')
-    frame = love.graphics.newImage('graphics/frame.png') --sapling
+    cloud1 = love.graphics.newImage('graphics/cloud1.png') --cloud1
+    frame = love.graphics.newImage('graphics/frame.png') --frame
     
 end
 
@@ -29,10 +29,11 @@ end
 
 function love.draw()
     love.graphics.setColor(1, 1, 1) --default white
-    love.graphics.rectangle('fill', 768, 0, 640, 768)
-    love.graphics.draw(background) --background
-    love.graphics.draw(cloud1, 0, 0, 0, 1, 1)
+     love.graphics.draw(background) --background
+    love.graphics.draw(cloud1, 0, 0) --cloud1
     love.graphics.draw(frame, 125, 150) --frame
-    love.graphics.setColor(0, 0, 0)
+    love.graphics.setColor(249/255, 228/255, 188/255) --color side bar
+    love.graphics.rectangle('fill', 768, 0, 384, 768) --side bar rectangle
+    love.graphics.setColor(0, 0, 0) --text color
     love.graphics.printf(label .. text, 768, 0, 384)
 end
