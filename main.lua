@@ -1,5 +1,5 @@
 function love.load()
-    label = 'Today's Calories:'
+    label = "Today's Calories:"
     text = '2000'
     love.window.setMode(1152, 768) --window dimensions
     background = love.graphics.newImage('graphics/background.png') --background
