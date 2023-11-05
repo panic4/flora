@@ -5,7 +5,11 @@ function love.load()
     text = '2000'
     love.window.setMode(1152, 768) --window dimensions
     background = love.graphics.newImage('graphics/background.png') --background
+    sun = love.graphics.newImage('graphics/sun.png') --sun
+    cloud1x = -450
     cloud1 = love.graphics.newImage('graphics/cloud1.png') --cloud1
+    cloud2x = -300
+    cloud2 = love.graphics.newImage('graphics/cloud2.png') --cloud2
     frame = love.graphics.newImage('graphics/frame.png') --frame
     
 end
@@ -29,11 +33,22 @@ end
 
 function love.draw()
     love.graphics.setColor(1, 1, 1) --default white
-     love.graphics.draw(background) --background
-    love.graphics.draw(cloud1, 0, 0) --cloud1
+    love.graphics.draw(background) --background
+    love.graphics.draw(sun)--sun rotates
+    love.graphics.draw(cloud1, cloud1x, 130) --cloud1
+    love.graphics.draw(cloud2, cloud2x, 250) --cloud1
+    cloud1x = cloud1x + .25 --cloud1 speed
+    cloud2x = cloud2x + .5 --cloud2 speed
+    if (cloud1x > 800) then --resets clouds to the beginning
+        cloud1x = -260 
+    end
+    if (cloud2x > 1000) then
+        cloud2x = -260
+    end
     love.graphics.draw(frame, 125, 150) --frame
-    love.graphics.setColor(249/255, 228/255, 188/255) --color side bar
+    love.graphics.setColor(255/255, 255/255, 237/255) --color side bar
     love.graphics.rectangle('fill', 768, 0, 384, 768) --side bar rectangle
     love.graphics.setColor(0, 0, 0) --text color
     love.graphics.printf(label .. text, 768, 0, 384)
+    
 end
